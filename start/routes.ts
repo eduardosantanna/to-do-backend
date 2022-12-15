@@ -26,9 +26,11 @@ Route.get('/', async () => {
 Route.post('/login', 'AuthController.login')
 Route.get('/logout', 'AuthController.logout')
 
-Route.resource('/users', 'UsersController')
-  .apiOnly()
-  .middleware({ update: 'auth', destroy: 'auth', show: 'auth' })
+Route.group(() => {
+  Route.get('/users', 'UsersController.show')
+  Route.post('/users', 'UsersController.store')
+  Route.delete('/users', 'UsersController.destroy')
+}).middleware('auth')
 
 Route.group(() => {
   Route.post('/photo', 'PhotoUsersController.store')

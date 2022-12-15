@@ -1,5 +1,10 @@
 {
   "name": "to-do-list-backend",
+  "author": {
+    "email": "eduardosantana.total@gmail.com",
+    "name": "Eduardo Santana",
+    "url": "https://github.com/eduardosantanna"
+  },
   "version": "1.0.0",
   "private": true,
   "scripts": {
