@@ -40,6 +40,6 @@ Route.group(() => {
 
 Route.group(() => {
   Route.post('/itens', 'ToDoListItensController.store')
-  Route.put('/itens', 'ToDoListItensController.update')
-  Route.delete('/itens', 'ToDoListItensController.destroy')
+  Route.put('/itens/:id', 'ToDoListItensController.update')
+  Route.delete('/itens/:id', 'ToDoListItensController.destroy')
 }).middleware('auth')
