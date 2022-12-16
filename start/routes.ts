@@ -27,13 +27,19 @@ Route.post('/login', 'AuthController.login')
 Route.get('/logout', 'AuthController.logout')
 
 Route.group(() => {
-  Route.get('/users', 'UsersController.show')
+  Route.get('/users', 'UsersController.show').middleware('auth')
   Route.post('/users', 'UsersController.store')
-  Route.delete('/users', 'UsersController.destroy')
-}).middleware('auth')
+  Route.delete('/users', 'UsersController.destroy').middleware('auth')
+})
 
 Route.group(() => {
   Route.post('/photo', 'PhotoUsersController.store')
   Route.put('/photo', 'PhotoUsersController.update')
   Route.delete('/photo', 'PhotoUsersController.destroy')
+}).middleware('auth')
+
+Route.group(() => {
+  Route.post('/itens', 'ToDoListItensController.store')
+  Route.put('/itens', 'ToDoListItensController.update')
+  Route.delete('/itens', 'ToDoListItensController.destroy')
 }).middleware('auth')
