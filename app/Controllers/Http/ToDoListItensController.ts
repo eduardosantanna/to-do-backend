@@ -4,6 +4,12 @@ import User from 'App/Models/User'
 import ItenValidator from 'App/Validators/ItenValidator'
 
 export default class ToDoListItensController {
+  public async index({ response, auth }: HttpContextContract) {
+    const currentUser = auth.use('api').user as User
+    const tasks = await ToDoListIten.query().andWhere({ user_id: currentUser.id })
+    return response.ok(tasks)
+  }
+
   public async store({ request, response, auth }: HttpContextContract) {
     const currentUser = auth.use('api').user as User
     const dataItem = await request.validate(ItenValidator)

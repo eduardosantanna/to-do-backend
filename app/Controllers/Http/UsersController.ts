@@ -14,7 +14,6 @@ export default class UsersController {
   public async show({ response, auth }: HttpContextContract) {
     const currentUser = auth.use('api').user as User
     await currentUser.load('PhotoUser')
-    await currentUser.load('toDoListIten')
 
     if (currentUser.PhotoUser) {
       const photoUrl = await Drive.getSignedUrl(currentUser.PhotoUser.url, { expiresIn: '30mins' })

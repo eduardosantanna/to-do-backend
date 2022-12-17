@@ -39,6 +39,7 @@ Route.group(() => {
 }).middleware('auth')
 
 Route.group(() => {
+  Route.get('/itens', 'ToDoListItensController.index')
   Route.post('/itens', 'ToDoListItensController.store')
   Route.put('/itens/:id', 'ToDoListItensController.update')
   Route.delete('/itens/:id', 'ToDoListItensController.destroy')
