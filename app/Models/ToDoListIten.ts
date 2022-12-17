@@ -8,6 +8,9 @@ export default class ToDoListIten extends BaseModel {
   @column()
   public content: string
 
+  @column()
+  public completed: boolean
+
   @column({ serializeAs: 'userId' })
   public userId: number
 
