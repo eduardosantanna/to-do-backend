@@ -33,14 +33,8 @@ Route.group(() => {
 })
 
 Route.group(() => {
-  Route.post('/photo', 'PhotoUsersController.store')
-  Route.put('/photo', 'PhotoUsersController.update')
-  Route.delete('/photo', 'PhotoUsersController.destroy')
-}).middleware('auth')
-
-Route.group(() => {
-  Route.get('/itens', 'ToDoListItensController.index')
-  Route.post('/itens', 'ToDoListItensController.store')
-  Route.put('/itens/:id', 'ToDoListItensController.update')
-  Route.delete('/itens/:id', 'ToDoListItensController.destroy')
+  Route.get('/tasks', 'ToDoListItensController.index')
+  Route.post('/tasks', 'ToDoListItensController.store')
+  Route.put('/tasks/:id', 'ToDoListItensController.update')
+  Route.delete('/tasks/:id', 'ToDoListItensController.destroy')
 }).middleware('auth')

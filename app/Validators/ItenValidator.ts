@@ -25,6 +25,7 @@ export default class ItenValidator {
    */
   public schema = schema.create({
     content: schema.string({}, [rules.required(), rules.minLength(5), rules.maxLength(255)]),
+    completed: schema.boolean.optional(),
   })
 
   /**

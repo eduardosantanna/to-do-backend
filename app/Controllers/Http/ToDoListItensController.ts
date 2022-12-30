@@ -26,7 +26,7 @@ export default class ToDoListItensController {
     if (!dataItem) return response.notFound({ error: 'Task not found' })
     if (dataItem.userId !== currentUser.id) return response.unauthorized()
 
-    await dataItem.merge({ content: newDataItem.content }).save()
+    await dataItem.merge({ content: newDataItem.content, completed: newDataItem.completed }).save()
 
     return response.status(200)
   }
