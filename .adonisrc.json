@@ -21,8 +21,7 @@
     "./providers/AppProvider",
     "@adonisjs/core",
     "@adonisjs/auth",
-    "@adonisjs/lucid",
-    "@adonisjs/drive-s3"
+    "@adonisjs/lucid"
   ],
   "aceProviders": [
     "@adonisjs/repl"
