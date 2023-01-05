@@ -29,11 +29,7 @@ export default class UserValidator {
       rules.email(),
       rules.unique({ table: 'users', column: 'email' }),
     ]),
-    password: schema.string({}, [
-      rules.maxLength(180),
-      rules.required(),
-      rules.regex(/(?=^.{8,}$)((?=.*\d)(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/g),
-    ]),
+    password: schema.string({}, [rules.maxLength(180), rules.required(), rules.minLength(8)]),
   })
 
   /**
