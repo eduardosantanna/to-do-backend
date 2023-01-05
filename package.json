@@ -8,6 +8,9 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "bin":{
+    "ace": "./ace.js"
+  }
   "scripts": {
     "dev": "node ace serve --watch",
     "build": "node ace build --production",
